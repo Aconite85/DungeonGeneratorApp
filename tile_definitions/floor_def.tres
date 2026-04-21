@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="TileDefinition" format=3 uid="uid://dsicgffpcqo5m"]
+
+[ext_resource type="Script" uid="uid://c2sjaweb1bydr" path="res://tile_definitions/tile_definition.gd" id="1_54u18"]
+[ext_resource type="Texture2D" uid="uid://db5iqvjs3punh" path="res://Tilesheet/monochrome_packed.png" id="2_bmou3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8tayn"]
+atlas = ExtResource("2_bmou3")
+region = Rect2(128, 80, 16, 16)
+
+[resource]
+script = ExtResource("1_54u18")
+texture = SubResource("AtlasTexture_8tayn")
+isWalkable = true

@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://dyp4aqqob1f2h"]
+
+[ext_resource type="Script" uid="uid://eclomkn54gwg" path="res://scripts/main.gd" id="1_h2yge"]
+[ext_resource type="Script" uid="uid://c7aoelm5f25at" path="res://scripts/map.gd" id="2_1bvp3"]
+[ext_resource type="Script" uid="uid://cmfsxon05amb2" path="res://scripts/generators/BSP/dungeon_generator_BSP.gd" id="3_lquwl"]
+[ext_resource type="Script" uid="uid://nj4qqku6u1kb" path="res://scripts/UI/ui_panel.gd" id="4_1bvp3"]
+[ext_resource type="Script" uid="uid://byhhhd57ces1s" path="res://scripts/generators/AgentRandom/dungeon_generator_agent_random.gd" id="4_lquwl"]
+[ext_resource type="Script" uid="uid://c1n7dt3loxrfy" path="res://scripts/generators/CA/dungeon_generator_ca.gd" id="5_7mycd"]
+[ext_resource type="Script" uid="uid://b7ciju1gwwrqf" path="res://scripts/generators/AgentControlled/dungeon_generator_agent_controlled.gd" id="5_272bh"]
+
+[node name="Main" type="Node2D" unique_id=334076921]
+script = ExtResource("1_h2yge")
+
+[node name="Map" type="Node2D" parent="." unique_id=237707996]
+script = ExtResource("2_1bvp3")
+
+[node name="DungeonGeneratorBSP" type="Node" parent="Map" unique_id=1242394552]
+script = ExtResource("3_lquwl")
+
+[node name="DungeonGeneratorAgentRandom" type="Node" parent="Map" unique_id=2060899452]
+script = ExtResource("4_lquwl")
+
+[node name="DungeonGeneratorAgentControlled" type="Node" parent="Map" unique_id=162176097]
+script = ExtResource("5_272bh")
+
+[node name="DungeonGeneratorCA" type="Node" parent="Map" unique_id=703655826]
+script = ExtResource("5_7mycd")
+
+[node name="Camera2D" type="Camera2D" parent="Map" unique_id=845149062]
+position = Vector2(888, 464)
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
+[node name="UIPanel" type="CanvasLayer" parent="." unique_id=132115542]
+script = ExtResource("4_1bvp3")
+
+[node name="PanelContainer" type="PanelContainer" parent="UIPanel" unique_id=412964777]
+offset_left = 1344.0
+offset_top = 256.0
+offset_right = 1600.0
+offset_bottom = 896.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UIPanel/PanelContainer" unique_id=1463550081]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="UIPanel" unique_id=1824705500]
+offset_left = 1408.0
+offset_top = 184.0
+offset_right = 1536.0
+offset_bottom = 248.0
+text = "New Dungeon"
+
+[node name="Label" type="Label" parent="UIPanel" unique_id=1017107346]
+offset_left = 1312.0
+offset_right = 1600.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 10
+text = "Camera pan: RMB, Zoom: Scroll up/down"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ItemList" type="ItemList" parent="UIPanel" unique_id=247069032]
+offset_left = 1080.0
+offset_top = 640.0
+offset_right = 1336.0
+offset_bottom = 897.0
